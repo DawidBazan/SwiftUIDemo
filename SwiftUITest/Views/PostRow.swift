@@ -25,7 +25,7 @@ struct PostRow: View {
                     ImageView(imageURL: user.picture.medium, size: 70)
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(fullName.capitalized).font(.headline)
+                        Text(fullName.capitalized).font(.headline).color(.black)
                         Text("Posted 10min ago").font(.system(size: 12)).color(.gray)
                     }
                 }
@@ -46,6 +46,7 @@ struct ImageView: View {
     
     var body: some View {
         Image(uiImage: (imageLoader.data.count == 0) ? UIImage() : UIImage(data: imageLoader.data)!)
+            .renderingMode(.original)
             .resizable()
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 2))

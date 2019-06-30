@@ -16,7 +16,6 @@ struct ContentView : View {
         
         NavigationView {
             List {
-                
                 //top cells
                 ScrollView {
                     HStack(spacing: 15) {
